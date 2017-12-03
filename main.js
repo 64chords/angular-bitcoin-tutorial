@@ -19,16 +19,14 @@ bitcoinCalculator.controller('bitcoinController',function($scope,$http){
     };
   });
 
-  $scope.exampleData = [{
-    "key":"Quantity",
-    "bar":true,
-    "values":[
-      [10,20],
-      [20,40],
-      [30,60],
-      [40,80],
-      [50,100]
-    ]
-  }];
+  $scope.xAxisTickFormatFunction = function(){
+    return function(date){
+      return d3.time.format('%x')(new Date(date));
+    };
+  };
 
+  $scope.bitcoinHistoricalData = [{
+    "key": "Prices",
+    "values": "values"
+  }]
 });
